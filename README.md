@@ -17,7 +17,8 @@ persona visitada (notificación interna y correo electrónico) y genera reportes
 
 https://carpiods.free.je/index.php
 
-
+## Credenciales 
+Usuario: admin Contraseña: admin1
 
 ## Contenido del repositorio
 
