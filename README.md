@@ -39,20 +39,3 @@ PHP 8 · MySQL / MariaDB (mysqli) · Bootstrap 5.3 · PHPMailer · HTML y CSS
 | Recepcionista | Registrar entradas y salidas, ver notificaciones |
 | Docente | Ver las visitas dirigidas a él y sus notificaciones |
 
-## Instalación
-
-1. Cree una base de datos en MySQL e importe `database/estructura_base_de_datos.sql`.
-2. Para probar con datos de ejemplo, importe después `database/carga_masiva_datos.sql`
-   (usuarios `usuario01` a `usuario20`, contraseña de prueba `Clave2026`).
-3. Para crear su propio administrador, genere un hash con `password_hash('SU_CLAVE', PASSWORD_DEFAULT)`
-   e insértelo en `cv_usuarios` con rol `administrador`.
-4. Copie la carpeta `src/` al servidor y edite `src/conexion.php` con los datos de su base de datos.
-5. Para el envío de correos, edite `src/correo_config.php` con su cuenta de Gmail y su
-   **clave de aplicación** (no la contraseña normal).
-6. Abra `login.php` en el navegador.
-
-## Seguridad
-
-Este repositorio es público, por eso `conexion.php` y `correo_config.php` solo contienen marcadores
-(`TU_HOST_MYSQL`, `TU_CLAVE_DE_APLICACION_GMAIL`, etc.). **No suba nunca contraseñas reales.**
-Las contraseñas de los usuarios se guardan cifradas con `password_hash`.
