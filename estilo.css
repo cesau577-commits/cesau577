@@ -1,0 +1,515 @@
+
+/* ==========================================
+   INAC - SISTEMA INSTITUCIONAL DE VISITAS
+   DISEÑO OFICIAL AZUL Y BLANCO
+========================================== */
+
+:root {
+    --navy: #081a36;
+    --navy2: #112e57;
+    --navy3: #1b467c;
+    --blue: #2563eb;
+    --blue-light: #e8f0ff;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #172b4d;
+    --muted: #64748b;
+    --border: #e2e8f0;
+}
+
+/* ESTILO GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+/* ESTRUCTURA PRINCIPAL */
+
+.shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENÚ LATERAL */
+
+.sidebar {
+    width: 265px;
+    flex-shrink: 0;
+    background: linear-gradient(
+        180deg,
+        var(--navy) 0%,
+        var(--navy2) 65%,
+        #173c6b 100%
+    );
+    color: white;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    box-shadow: 4px 0 20px rgba(8, 26, 54, 0.12);
+}
+
+/* MARCA INAC */
+
+.brand {
+    text-align: center;
+    font-weight: 800;
+    font-size: 31px;
+    letter-spacing: 1px;
+    padding: 12px 5px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.brand small {
+    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: #b6cbea;
+    font-weight: 400;
+}
+
+/* LOGO INSTITUCIONAL
+   Se utilizará cuando agreguemos la imagen */
+
+.brand-logo {
+    display: block;
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: white;
+    padding: 7px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+}
+
+/* ENLACES DEL MENÚ */
+
+.sidebar .nav {
+    gap: 5px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #dce9fb;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav a:hover {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    transform: translateX(3px);
+}
+
+.sidebar .nav a.active {
+    background: #24589b;
+    color: white;
+    font-weight: 650;
+    box-shadow: inset 3px 0 0 #93c5fd;
+}
+
+/* CONTENIDO */
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ENCABEZADO */
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.top h1 {
+    font-size: 27px;
+    font-weight: 750;
+    color: #112e57;
+    margin: 0;
+}
+
+.top span {
+    background: #dce9fc;
+    color: #163b76;
+    border: 1px solid #c7dafa;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 650;
+    text-transform: capitalize;
+}
+
+/* TARJETAS Y PANELES */
+
+.panel {
+    border: 1px solid rgba(226,232,240,0.75);
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 6px 24px rgba(22,52,92,0.06);
+    transition: box-shadow 0.2s ease;
+}
+
+.panel:hover {
+    box-shadow: 0 9px 28px rgba(22,52,92,0.09);
+}
+
+.panel h4 {
+    color: #173763;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* ESTADÍSTICAS */
+
+.metric {
+    font-size: 36px;
+    font-weight: 800;
+    color: #153d75;
+    line-height: 1.3;
+    margin-top: 8px;
+}
+
+/* BOTONES */
+
+.btn {
+    border-radius: 9px;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #163f7a;
+    border-color: #163f7a;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #0d2d5b;
+    border-color: #0d2d5b;
+}
+
+.btn-outline-primary {
+    color: #163f7a;
+    border-color: #163f7a;
+}
+
+.btn-outline-primary:hover {
+    background: #163f7a;
+    border-color: #163f7a;
+    color: white;
+}
+
+.btn-sm {
+    padding: 6px 11px;
+    font-size: 12px;
+}
+
+/* FORMULARIOS */
+
+.form-label {
+    font-weight: 600;
+    color: #28446d;
+    margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #d7e1ee;
+    border-radius: 9px;
+    padding: 11px 13px;
+    color: var(--text);
+    background-color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #4f8ad9;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* TABLAS */
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: #eaf1fb;
+    color: #24456f;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 14px;
+    border-bottom: 2px solid #d6e3f4;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 14px;
+    vertical-align: middle;
+    color: #334155;
+    border-color: #edf1f7;
+    font-size: 14px;
+}
+
+.table-hover tbody tr:hover td {
+    background: #f5f9ff;
+}
+
+/* ESTADOS */
+
+.badge {
+    font-size: 12px;
+    padding: 7px 11px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* MENSAJES */
+
+.alert {
+    border-radius: 11px;
+    padding: 14px 18px;
+    font-size: 14px;
+}
+
+.alert-info {
+    background: #e9f2ff;
+    color: #174477;
+    border-color: #c8defc;
+}
+
+/* VENTANAS MODALES */
+
+.modal-content {
+    border: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 55px rgba(0,0,0,0.18);
+}
+
+.modal-header {
+    background: #f1f6ff;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+    color: #153768;
+    font-weight: 700;
+}
+
+/* INICIO DE SESIÓN */
+
+.login-bg {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(
+        135deg,
+        #07142e,
+        #153665,
+        #24538b
+    );
+    padding: 20px;
+}
+
+.login-card {
+    max-width: 420px;
+    width: 94%;
+    border-radius: 20px;
+    padding: 34px;
+    background: white;
+    box-shadow: 0 20px 55px rgba(0,0,0,0.25);
+}
+
+/* LOGO EN LOGIN */
+
+.login-logo {
+    display: block;
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 760px) {
+
+    .shell {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .brand {
+        font-size: 26px;
+        padding: 8px 5px 15px;
+    }
+
+    .brand-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sidebar .nav {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .sidebar a {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .sidebar .nav a:hover {
+        transform: none;
+    }
+
+    .main {
+        padding: 16px;
+    }
+
+    .top {
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .top h1 {
+        font-size: 22px;
+    }
+
+    .panel {
+        border-radius: 13px;
+    }
+
+    .metric {
+        font-size: 28px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .login-card {
+        padding: 24px;
+    }
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+
+@media (max-width: 420px) {
+
+    .top h1 {
+        font-size: 20px;
+    }
+
+    .sidebar .nav a {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+}
+
+/* INAC - MEJORAS VISUALES */
+
+/* Menú más moderno */
+.sidebar {
+    background: linear-gradient(
+        160deg,
+        #061329,
+        #123c75,
+        #075985
+    );
+    border-right: 4px solid #38bdf8;
+}
+
+/* Marca institucional */
+.brand {
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Enlaces del menú */
+.sidebar .nav a {
+    border: 1px solid transparent;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav a:hover,
+.sidebar .nav a.active {
+    background: rgba(255,255,255,0.16);
+    border-color: rgba(255,255,255,0.18);
+}
+
+/* Tarjetas de estadísticas */
+.row.g-3.mb-4 > .col-6 .panel {
+    border-top: 4px solid #2563eb;
+    box-shadow: 0 8px 25px rgba(15,45,90,0.10);
+}
+
+/* Paneles */
+.panel {
+    border-radius: 20px;
+}
+
+/* Encabezados */
+.top h1 {
+    color: #0c3670;
+    font-size: 30px;
+}
+
+/* Botones principales */
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        #123c75,
+        #2563eb
+    );
+    border: none;
+}
+
+/* Tabla */
+.table thead th {
+    background: #dceaff;
+    color: #123c75;
+}

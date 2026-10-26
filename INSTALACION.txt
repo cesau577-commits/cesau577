@@ -1,0 +1,9 @@
+SICVI - Instalación
+1. EXPORTA respaldo de la base de datos desde phpMyAdmin.
+2. Ejecuta migracion.sql UNA SOLA VEZ, después de comprobar que las columnas correo y usuario_id aún no existen en cv_personal.
+3. Copia archivos PHP a htdocs (misma carpeta), preservando credenciales existentes en conexion.php. Cambia zona horaria si aplica.
+4. Cambia la contraseña admin: genera un hash con password_hash('TU_CLAVE_NUEVA_LARGA', PASSWORD_DEFAULT) en PHP local y ejecuta UPDATE cv_usuarios SET password='HASH_GENERADO' WHERE usuario='admin';. No uses MD5. Haz lo mismo para las demás cuentas. Borra crear_admin.php, reparar_usuarios.php y formulario_reparacion.html del servidor.
+5. Abre login.php. Admin gestiona personal y usuarios; recepcionista registra visitas y salida. Para que un docente vea notificaciones, crea un usuario y asígnalo a cv_personal.usuario_id; rol docente.
+6. Correo: instala PHPMailer con composer require phpmailer/phpmailer y sube vendor; configura correo_config.php con SMTP real. Sin configuración, las notificaciones internas funcionan y los correos quedan pendientes. Verifica si InfinityFree permite SMTP saliente. El envío requiere que el servidor SMTP acepte la conexión.
+7. Utiliza HTTPS y limita acceso al servidor. No publiques credenciales, archivos de instalación ni dumps SQL.
+8. Este es un proyecto base; para producción agrega limitación de intentos, recuperación de cuentas, política de retención de datos, permisos más finos, reintentos controlados y pruebas de correo.
