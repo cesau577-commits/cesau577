@@ -17,7 +17,7 @@ persona visitada (notificación interna y correo electrónico) y genera reportes
 
 https://carpiods.free.je/index.php
 
-Las credenciales de acceso se entregan en el archivo `README.txt` del trabajo, no en este repositorio.
+
 
 ## Contenido del repositorio
 
